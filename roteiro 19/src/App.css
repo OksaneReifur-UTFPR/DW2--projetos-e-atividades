@@ -1,0 +1,212 @@
+/* Paleta de Cores & Fontes Fofas */
+:root {
+  --rosa-fundo: #fde8ed;
+  --rosa-card: #fff0f3;
+  --rosa-detalhe: #ffb3c1;
+  --rosa-destaque: #ff4d6d;
+  --texto-suave: #5c3d46;
+  --borda-suave: #f9bec7;
+}
+
+body {
+  background-color: var(--rosa-fundo);
+  color: var(--texto-suave);
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Fredoka', cursive, sans-serif;
+  /* Fundo decorado com corações e estampas sutis */
+  background-image: 
+    radial-gradient(#ffb3c1 15%, transparent 16%),
+    radial-gradient(#ffb3c1 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container Principal estilo Scrapbook */
+.container {
+  max-width: 650px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 3px stroke var(--borda-suave);
+  box-shadow: 0 10px 25px rgba(255, 179, 193, 0.4);
+  position: relative;
+}
+
+/* Detalhe de fita adesiva no topo do container */
+.container::before {
+  content: "🎀 💖 🎀";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--rosa-detalhe);
+  color: white;
+  padding: 4px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: var(--rosa-destaque);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 0px #ffe5ec;
+}
+
+h1::before, h1::after {
+  content: " 🍓 ";
+}
+
+/* Formulário com estilo de Bilhetinho */
+.formulario-recado {
+  background-color: var(--rosa-card);
+  border: 2px dashed var(--rosa-detalhe);
+  border-radius: 20px;
+  padding: 1.8rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 3px 5px 12px rgba(255, 179, 193, 0.2);
+  position: relative;
+}
+
+.formulario-recado h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--rosa-destaque);
+}
+
+.formulario-recado h2::after {
+  content: " 💕";
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-weight: bold;
+  color: var(--texto-suave);
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--borda-suave);
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: var(--texto-suave);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--rosa-destaque);
+  box-shadow: 0 0 8px rgba(255, 77, 109, 0.3);
+}
+
+.caracteres-restantes {
+  font-size: 0.8rem;
+  color: #a87682;
+  text-align: right;
+}
+
+/* Botão Fofinho de Envio */
+.formulario-recado button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: var(--rosa-destaque);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.formulario-recado button:hover:not(:disabled) {
+  transform: scale(1.03);
+  background-color: #ff0054;
+}
+
+.formulario-recado button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #ffb3c1;
+}
+
+/* Lista de Recados e Cartões estilo Polaroide/Post-it */
+.lista-recados {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cartao-recado {
+  background: #ffffff;
+  border: 2px solid var(--borda-suave);
+  border-radius: 18px;
+  padding: 1.2rem 1.5rem;
+  position: relative;
+  box-shadow: 4px 4px 0px var(--rosa-detalhe);
+  transition: transform 0.2s ease;
+}
+
+.cartao-recado:hover {
+  transform: translateY(-3px);
+}
+
+/* Coração decorativo nos cartões */
+.cartao-recado::after {
+  content: "🌸";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.1rem;
+}
+
+.cartao-recado strong {
+  color: var(--rosa-destaque);
+  font-size: 1.05rem;
+}
+
+.cartao-recado p {
+  margin: 0.5rem 0 0 0;
+  line-height: 1.4;
+}
+
+/* Mensagens de Feedback */
+.erro {
+  color: #e63946;
+  font-weight: bold;
+  margin: 0;
+  background-color: #ffe6e6;
+  padding: 0.6rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.sucesso {
+  color: #2b9348;
+  font-weight: bold;
+  margin: 0;
+  background-color: #e8f5e9;
+  padding: 0.6rem;
+  border-radius: 10px;
+  text-align: center;
+}
