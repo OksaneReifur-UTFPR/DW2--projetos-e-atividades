@@ -1,0 +1,123 @@
+:root {
+  --p-blue-gingham: #daeaf6;
+  --p-yellow-pale: #fffdf2;
+  --p-yellow-lemon: #fee79b;
+  --p-blue-soft: #d0e3f7;
+  --p-pink-heart: #fbc6d3;
+}
+
+body {
+  background-color: #f7f9fc;
+  background-image: 
+    radial-gradient(var(--p-pink-heart) 15%, transparent 16%),
+    radial-gradient(var(--p-blue-soft) 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  font-family: 'Comic Sans MS', 'Segoe UI', cursive, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container Principal em estilo Caderno/Patchwork */
+.container {
+  max-width: 550px;
+  margin: 2rem auto;
+  background: var(--p-yellow-pale);
+  border: 4px dashed #aad7ff;
+  border-radius: 25px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+/* Título com Laço e Corações */
+.container h1 {
+  text-align: center;
+  color: #5b8fb9;
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.container h1::before {
+  content: '🎀 ';
+}
+
+.container h1::after {
+  content: ' 💖';
+}
+
+/* Contador de Mensagens */
+.contador {
+  text-align: center;
+  color: #88a0a8;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  border: 1px solid #e1effe;
+}
+
+.contador-wrapper {
+  text-align: center;
+}
+
+/* Lista dos Recados */
+.lista-recados {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Cartão do Recado estilizado */
+.cartao-recado {
+  background: #ffffff;
+  border: 2px solid #fce7f3;
+  border-radius: 18px;
+  padding: 1.2rem;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  transition: transform 0.2s ease;
+}
+
+.cartao-recado:hover {
+  transform: translateY(-3px);
+}
+
+/* Detalhe de coração no canto de cada cartão */
+.cartao-recado::after {
+  content: '🐣';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.cartao-recado strong {
+  color: #3b82f6;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.cartao-recado p {
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Mensagens de Estado (Erro / Carregando) */
+.erro {
+  color: #d32f2f;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+}
